@@ -81,4 +81,8 @@ extension AdventDay {
     public init() {
         self.init(data: "")
     }
+
+    var lines: [String] {
+        data.components(separatedBy: "\n")
+    }
 }

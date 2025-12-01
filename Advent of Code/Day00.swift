@@ -1,5 +1,5 @@
 //
-//  Day0.swift
+//  Day00.swift
 //  Advent of Code 2025
 //
 //  Created by Stephen H. Gerstacker on 2025-11-30.
@@ -19,7 +19,7 @@ public struct Day0: AdventDay {
     public func part1() async throws -> Any {
         print("Part 1 Complete")
     }
-    
+
     public func part2() async throws -> Any {
         print("Part 2 Complete")
     }

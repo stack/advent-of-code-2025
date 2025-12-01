@@ -14,7 +14,6 @@
 		D16559F42EDD33D700717670 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = D16559F32EDD33D700717670 /* Collections */; };
 		D16559F62EDD33D700717670 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D16559F52EDD33D700717670 /* AsyncAlgorithms */; };
 		D16559F82EDD33E000717670 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = D16559F72EDD33E000717670 /* ArgumentParser */; };
-		D1655A002EDD348D00717670 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D16559FF2EDD348B00717670 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,7 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1655A002EDD348D00717670 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
