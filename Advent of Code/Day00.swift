@@ -11,7 +11,7 @@ import Foundation
 public struct Day0: AdventDay {
     
     public var data: String
-    
+
     public init(data: String) {
         self.data = data
     }

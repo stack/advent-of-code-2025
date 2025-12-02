@@ -16,7 +16,8 @@ public protocol AdventDay {
     static var day: Int { get }
     
     var data: String { get set }
-    
+    var useSampleData: Bool { get }
+
     /// An initializer that uses the provided test data for both parts
     init(data: String)
     
@@ -50,6 +51,8 @@ extension AdventDay {
         Self.day
     }
 
+    public var useSampleData: Bool { false }
+
     // Default implementation of `part2`, so there aren't interruptions before
     // working on `part1()`.
     public func part2() -> Any {
@@ -57,9 +60,9 @@ extension AdventDay {
     }
 
     /// Prepare the challenge to run
-    public mutating func prepare(useSample: Bool) throws {
+    public mutating func prepare() throws {
         let dayString = String(format: "%02d", Self.day)
-        let dataName = useSample ? "Sample" : "Day"
+        let dataName = useSampleData ? "Sample" : "Day"
         let dataFilename = "\(dataName)\(dayString)"
 
         guard let bundle = Bundle(identifier: "us.gerstacker.advent-of-code.2025") else {
