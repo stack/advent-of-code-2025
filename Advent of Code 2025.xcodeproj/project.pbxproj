@@ -54,6 +54,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D1655A482EE0694100717670 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -64,9 +74,22 @@
 		D16559FF2EDD348B00717670 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		D1655A4A2EE071F900717670 /* Exceptions for "Advent of Code" folder in "Advent of Code" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Utilities/ANSI.swift,
+			);
+			target = D16559C22EDD326E00717670 /* Advent of Code */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		D16559C52EDD326E00717670 /* Advent of Code */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				D1655A4A2EE071F900717670 /* Exceptions for "Advent of Code" folder in "Advent of Code" target */,
+			);
 			path = "Advent of Code";
 			sourceTree = "<group>";
 		};
@@ -164,6 +187,7 @@
 				D16559BF2EDD326E00717670 /* Sources */,
 				D16559C02EDD326E00717670 /* Frameworks */,
 				D16559C12EDD326E00717670 /* Resources */,
+				D1655A482EE0694100717670 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

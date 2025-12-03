@@ -12,7 +12,6 @@ import Foundation
 public struct Day2: AdventDay {
 
     public var data: String
-    public var useSampleData: Bool = false
 
     public init(data: String) {
         self.data = data
