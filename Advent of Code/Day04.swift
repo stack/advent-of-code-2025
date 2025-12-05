@@ -14,6 +14,8 @@ public struct Day4: AdventDay {
     struct Warehouse {
 
         var rolls: Set<Point> = []
+        var width: Int = 0
+        var height: Int = 0
 
         var accessible: Set<Point> {
             var accessible: Set<Point> = []
@@ -34,6 +36,9 @@ public struct Day4: AdventDay {
                 for (x, value) in line.enumerated() where value == "@" {
                     rolls.insert(Point(x: x, y: y))
                 }
+
+                width = line.count
+                height = y + 1
             }
         }
 
@@ -42,6 +47,25 @@ public struct Day4: AdventDay {
             rolls.subtract(toRemove)
 
             return toRemove
+        }
+
+        func printFloor() {
+            var lines: [String] = []
+
+            for y in 0 ..< height {
+                var line = ""
+
+                for x in 0 ..< width {
+                    let point = Point(x: x, y: y)
+
+                    line.append(rolls.contains(point) ? "@" : ".")
+                }
+
+                lines.append(line)
+            }
+
+            let block = lines.joined(separator: "\n")
+            print(block)
         }
     }
 
@@ -74,6 +98,8 @@ public struct Day4: AdventDay {
             print("Removed \(removed)")
             totalRemoved += removed
         }
+
+        warehouse.printFloor()
 
         return totalRemoved
     }
