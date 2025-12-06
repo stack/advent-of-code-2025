@@ -85,6 +85,12 @@ extension AdventDay {
         self.init(data: "")
     }
 
+    /// Convert the given data to a 2D grid of strings
+    var grid: [[String]] {
+        lines.map { $0.map { String($0) } }
+    }
+
+    /// Convert the given data to a sequence of lines broken by newline
     var lines: [String] {
         data.components(separatedBy: "\n")
     }
