@@ -6,18 +6,21 @@
 //
 
 import Foundation
+import Synchronization
 
-actor AsyncQueue<T> {
+final class AsyncQueue<T> {
 
-    var values: [T]
+    private let values: Mutex<[T]>
 
     init(values: [T]) {
-        self.values = values
+        self.values = Mutex(values)
     }
 
     func pop() -> T? {
-        guard !values.isEmpty else { return nil }
+        values.withLock {
+            guard !$0.isEmpty else { return nil }
 
-        return values.removeFirst()
+            return $0.removeFirst()
+        }
     }
 }
