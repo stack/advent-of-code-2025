@@ -14,6 +14,8 @@
 		D16559F42EDD33D700717670 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = D16559F32EDD33D700717670 /* Collections */; };
 		D16559F62EDD33D700717670 /* AsyncAlgorithms in Frameworks */ = {isa = PBXBuildFile; productRef = D16559F52EDD33D700717670 /* AsyncAlgorithms */; };
 		D16559F82EDD33E000717670 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = D16559F72EDD33E000717670 /* ArgumentParser */; };
+		D1655CEF2EE9FCCD00717670 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1655CEE2EE9FCCD00717670 /* Accelerate.framework */; };
+		D1655D172EEA3E7600717670 /* Subprocess in Frameworks */ = {isa = PBXBuildFile; productRef = D1655D162EEA3E7600717670 /* Subprocess */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,7 @@
 		D16559E42EDD332A00717670 /* Advent of Code CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Advent of Code CLI"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16559FD2EDD347500717670 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LICENSE; sourceTree = "<group>"; };
 		D16559FF2EDD348B00717670 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = README.md; sourceTree = "<group>"; };
+		D1655CEE2EE9FCCD00717670 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.1.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -111,6 +114,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D16559F42EDD33D700717670 /* Collections in Frameworks */,
+				D1655D172EEA3E7600717670 /* Subprocess in Frameworks */,
+				D1655CEF2EE9FCCD00717670 /* Accelerate.framework in Frameworks */,
 				D16559F22EDD33D700717670 /* Algorithms in Frameworks */,
 				D16559F62EDD33D700717670 /* AsyncAlgorithms in Frameworks */,
 			);
@@ -162,6 +167,7 @@
 		D16559EB2EDD33C900717670 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1655CEE2EE9FCCD00717670 /* Accelerate.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 				D16559F12EDD33D700717670 /* Algorithms */,
 				D16559F32EDD33D700717670 /* Collections */,
 				D16559F52EDD33D700717670 /* AsyncAlgorithms */,
+				D1655D162EEA3E7600717670 /* Subprocess */,
 			);
 			productName = "Advent of Code";
 			productReference = D16559C32EDD326E00717670 /* AdventOfCode.framework */;
@@ -266,6 +273,7 @@
 				TargetAttributes = {
 					D16559C22EDD326E00717670 = {
 						CreatedOnToolsVersion = 26.1.1;
+						LastSwiftMigration = 2610;
 					};
 					D16559CD2EDD326E00717670 = {
 						CreatedOnToolsVersion = 26.1.1;
@@ -289,6 +297,7 @@
 				D16559BC2EDD322E00717670 /* XCRemoteSwiftPackageReference "swift-collections" */,
 				D16559BD2EDD324700717670 /* XCRemoteSwiftPackageReference "swift-async-algorithms" */,
 				D16559DF2EDD330F00717670 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				D1655D152EEA3E7600717670 /* XCRemoteSwiftPackageReference "swift-subprocess" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = D16559C42EDD326E00717670 /* Products */;
@@ -410,6 +419,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = GE3GZ86XX9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -424,6 +434,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
+					"ACCELERATE_NEW_LAPACK=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -512,6 +523,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = GE3GZ86XX9;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -522,6 +534,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "ACCELERATE_NEW_LAPACK=1";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -929,6 +942,14 @@
 				minimumVersion = 1.6.2;
 			};
 		};
+		D1655D152EEA3E7600717670 /* XCRemoteSwiftPackageReference "swift-subprocess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftlang/swift-subprocess.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -951,6 +972,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D16559DF2EDD330F00717670 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
+		};
+		D1655D162EEA3E7600717670 /* Subprocess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D1655D152EEA3E7600717670 /* XCRemoteSwiftPackageReference "swift-subprocess" */;
+			productName = Subprocess;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

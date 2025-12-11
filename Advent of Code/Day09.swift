@@ -95,7 +95,7 @@ public struct Day9: AdventDay {
         var bestArea = 0
 
         while true {
-            guard let pair = await queue.pop() else {
+            guard let pair = queue.pop() else {
                 break
             }
 

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Utilities
 
 public struct Day3: AdventDay {
 

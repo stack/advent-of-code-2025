@@ -9,4 +9,5 @@ import Foundation
 
 enum AdventOfCodeError: Error {
     case parseError(String)
+    case runError(String)
 }
